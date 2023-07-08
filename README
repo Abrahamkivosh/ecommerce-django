@@ -1,4 +1,4 @@
-## Depedancies for the project
+# Depedancies for the project
 +* [Python 3.6](https://www.python.org/downloads/release/python-360/)
 +* [Pip](https://pip.pypa.io/en/stable/installing/)
 +* [Django](https://www.djangoproject.com/download/)
