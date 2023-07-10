@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', #  for token authentication
     'djoser', 
     'corsheaders', #  To allow requests from all origins
+    'product.apps.ProductConfig', 
 
 
 ]
@@ -142,8 +144,13 @@ REST_FRAMEWORK = {
     ]
 }
 
+# Configure django-rest-framework-simplejwt to use the Authorization: JWT <access_token> header:
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+}
+
 
 # defines the absolute path to the directory where uploaded media files will be stored
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # defines the URL that will be used to access the media files on the server
 MEDIA_URL = '/media/'
